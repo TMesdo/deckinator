@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'Supercell-Magic';
+    src: url('../fonts/supercell-magic_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { box-sizing: border-box; }
+html, body { margin:0; padding: 0; font-size: 12px; font-family: 'Supercell-Magic', sans-serif; letter-spacing: 1px; }
+a { text-decoration: none; }
+a img { border:none; }
+button, input, select, textarea { font-family: inherit; }
+.clear { clear:both; }
+
+button {
+	background:#e74c3c;
+	color:#FFF;
+	padding:10px 20px;
+	border:none;
+	border-radius: 5px;
+	box-shadow: inset 0 -2px 2px rgba(0,0,0,0.3);
+	cursor: pointer;
+}
+
+button:active {
+	box-shadow: inset 0 2px 2px rgba(0,0,0,0.3);
+}
+
+
+
+header {
+	position:relative;
+	padding:20px;
+	background:#34495e url('../img/logo.png') 98% 50% no-repeat;
+	color:#FFF;
+	box-shadow: inset 0 -2px 2px rgba(0,0,0,0.3);
+}
+
+header h1 {
+	margin:0;
+}
+
+header h3 {
+	position: absolute;
+	right:10px;
+	bottom:10px;
+	margin:0;
+}
+
+header h4 {
+	margin-bottom: 0;
+}
+
+footer {
+	padding:20px;
+	text-align: center;
+}
+
+.layer {
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.7);
+	z-index:9;
+}
+
+.popup {
+	position: fixed;
+	top:50%;
+	left:50%;
+	background:#FFF;
+	z-index:10;
+	padding:10px 20px;
+	border-radius: 10px;
+	box-shadow: inset 0 -2px 2px rgba(0,0,0,0.3);
+}
+
+.popup input {
+	width:350px;
+}
+
+.loading {
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.7) url('../img/loading.svg') 50% 50% no-repeat;
+	z-index:8;
+}
+
+.content .generator {
+	display: flex;
+	flex-wrap : wrap;
+	flex-direction : row;
+	justify-content : space-around;
+}
+
+.content .generator .generated {
+	margin:20px auto;
+	width:32%;
+	background:#ecf0f1;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap : wrap;
+	flex-direction : row;
+	justify-content : space-around;
+	padding:10px;
+}
+
+.content .generator .generated .notfound {
+	padding:155px 30px;
+	text-align: center;
+}
+
+.content .generator .generated .img {
+	display: flex;
+	flex-basis:25%;
+	flex-grow:1;
+	text-align: center;
+	align-items:center;
+}
+
+.content .generator .generated .img img {
+	margin:10px 0;
+	cursor: pointer;
+	width:90%;
+}
+
+.content .generator .generated .img img.rareteR {
+	box-shadow: 0 0 10px #FC6303, inset 0 0 20px #FC6303;
+	border-radius: 12px;
+}
+
+.content .generator .generated .img img.rareteE {
+	box-shadow: 0 0 10px #C200F4, inset 0 0 20px #C200F4;
+	border-radius: 12px;
+}
+
+.content .generator .generated .img img.rareteL {
+	box-shadow: 0 0 10px rgba(255,255,255,0.7), inset 0 0 20px rgba(255,255,255,0.7);
+	border-radius: 12px;
+}
+
+.content .generator .info {
+	margin-top:10px;
+	background:#ecf0f1;
+	padding:10px 0 0;
+	border-top:2px dotted #FFF;
+	width: 100%;
+	text-align:center;
+}
+
+.content .generator .info span a {
+	cursor: pointer;
+}
+
+.content .generate {
+	margin:20px;
+	text-align: center;
+}
+
+.content .filter {
+	background:#34495e;
+	color:#FFF;
+	padding: 10px 50px;
+	box-shadow: inset 0 2px 2px rgba(0,0,0,0.3);
+}
+
+.content .filter h2 {
+	cursor: pointer;
+}
+
+.content .filter .templates button {
+	margin:0 10px;
+}
+
+.content .filter .templates .choix {
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	border-bottom: 1px dotted rgba(255,255,255,0.1);
+	padding-bottom: 10px;
+}
+
+.content .filter .templates .choix button {
+	height:50px;
+	margin-top:26px;
+}
+
+.content .filter .templates .choix div {
+	padding:0 10px 10px;
+}
+
+.content .filter .templates .choix .type {
+	display: block;
+}
+
+.content .filter .templates .choix .type input {
+	margin:5px 5px 5px 0;
+}
+
+.content .filter .templates .choix .hide {
+	display:none;
+}
+
+.content .filter .templates .choix #range {
+	width:200px;
+}
+
+.content .filter .templates .choix #range h3 {
+	margin-bottom: 1px;
+}
+
+.content .filter .templates .choix #range .min {
+	padding-bottom: 5px;
+}
+
+.content .filter .templates .choix #range .max {
+	float:right;
+}
+
+.content .filter .templates .choix .chosenCards {
+	padding-top:20px;
+}
+
+.content .filter .templates .choix .chosenCards img {
+	width:50px;
+	flat:left;
+}
+
+.content .filter .templates .registered {
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	display: none;
+}
+
+.content .filter .cards {
+	width:80%;
+	float:left;
+}
+
+.content .filter .cards .liste {
+	display:flex;
+	flex-wrap : wrap;
+	flex-direction : row;
+	justify-content : flex-start;
+	align-items: center;
+	position: relative;
+	padding: 5px 0 5px 115px;
+	border-top: 1px dotted rgba(255,255,255,0.1);
+}
+
+.content .filter .cards .liste:first-of-type {
+	border:none;
+}
+
+.content .filter .cards .liste h3 {
+	position: absolute;
+	left:0;
+	display: table-cell;
+	vertical-align: middle;
+	padding:0 10px;
+	width:115px;
+	text-transform: capitalize;
+	margin:0;
+}
+
+.content .filter .cards .liste input {
+	display: none;
+}
+
+.content .filter .cards .liste label {
+	width:70px;
+	margin:10px;
+	text-align: center;
+}
+
+.content .filter .cards .liste img {
+	height:80px;
+	cursor: pointer;
+	filter: grayscale(100%);
+	opacity:0.3;
+}
+
+.content .filter .cards .liste input:checked + label img {
+	filter: grayscale(0%);
+	opacity:1;
+}
+
+.content .filter .cards .liste input.rareteR + label img {
+	box-shadow: 0 0 10px #FC6303, inset 0 0 20px #FC6303;
+	border-radius: 12px;
+}
+
+.content .filter .cards .liste input.rareteE + label img {
+	box-shadow: 0 0 10px #C200F4, inset 0 0 20px #C200F4;
+	border-radius: 12px;
+}
+
+.content .filter .cards .liste input.rareteL + label img {
+	box-shadow: 0 0 10px rgba(255,255,255,0.7), inset 0 0 20px rgba(255,255,255,0.7);
+	border-radius: 12px;
+}
+
+.content .filter .filters {
+	width:15%;
+	float:right;
+}
+
+.content .filter .filters div {
+	padding-left:30px;
+	border-left:1px dotted rgba(255,255,255,0.1);
+}
+
+.content .filter .filters button {
+	background:#bdc3c7;
+	color:#000;
+	margin:5px 0;
+}
+
+.content .filter .filters button.selected {
+	background:#f39c12;
+}
+
+
+@media screen and (max-width: 768px) {
+	header {
+		background: #34495e url('../img/logo.png') 95% 10px / 100px no-repeat;
+	}
+
+	.popup {
+		max-width: 90%;
+	}
+
+	.popup input {
+		width:auto;
+	}
+
+	.content .generator .generated {
+		width:95%;
+	}
+
+	.content .filter {
+		padding: 10px 20px;
+	}
+
+	.content .filter .cards {
+		width:100%;
+		float:none;
+	}
+
+	.content .filter .cards .liste {
+		padding:0;
+	}
+
+	.content .filter .cards .liste h3 {
+		position:relative;
+		width:100%;
+		padding-top:10px;
+	}
+
+	.content .filter .filters {
+		width:100%;
+		float:none;
+	}
+}
