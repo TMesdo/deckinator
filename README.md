@@ -1,5 +1,5 @@
-## Deckinator
-#Random Deck Generator for Clash Royal
+### Deckinator
+# Random Deck Generator for Clash Royal
 
 Developped by a random player for a tournament with friends.
 
